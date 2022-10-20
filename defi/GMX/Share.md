@@ -116,16 +116,19 @@ $$
 
 $$
 \begin{align*}
-AUM_{NonStableToken} & = PoolAmount\times Price+P\&L_{long}+P\&L_{short}\\
-P\&L_{long} & = GuranteedUSD-ReserveAmount\times Price\\
-P\&L_{short} &= \pm Size_{globalShort}\times \frac{\left | Price-avgPrice_{globalShort} \right |  }{avgPrice_{globalShort}}\\
+AUM_{NonStableToken} & = PoolAmount\times Price+PnL_{long}+PnL_{short}\\
+PnL_{long} & = GuranteedUSD-ReserveAmount\times Price\\
+PnL_{short} &= \pm Size_{globalShort}\times \frac{\left | Price-avgPrice_{globalShort} \right |  }{avgPrice_{globalShort}}\\
 \end{align*}
 $$
 
 对于short部分：
 
 $$
-\begin{align*}Price>avgPrice_{globalShort},User 亏损,LP 盈利,P\&L_{short}>0\\Price<avgPrice_{globalShort},User 盈利,LP 亏损,P\&L_{short}<0\\\end{align*}
+\begin{align*}
+Price>avgPrice_{globalShort},User 亏损,LP 盈利,PnL_{short}>0\\
+Price &lt avgPrice_{globalShort},User 盈利,LP 亏损,PnL_{short} &lt 0\\
+\end{align*}
 $$
 
 对于long部分：
